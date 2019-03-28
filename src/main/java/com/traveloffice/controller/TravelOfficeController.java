@@ -46,9 +46,9 @@ public class TravelOfficeController {
     }
 
     @PostMapping(value = "/addDomesticTrip")
-    public int addDomesticTrip(@RequestParam String tripName, @RequestBody DomesticTrip domesticTrip) {
-        travelOfficeService.addTrip(tripName, domesticTrip);
-        return 1;
+    public DomesticTrip addDomesticTrip(@RequestParam String tripName, @RequestBody DomesticTrip domesticTrip) {
+        return (DomesticTrip)travelOfficeService.addTrip(tripName, domesticTrip);
+
 
     }
 

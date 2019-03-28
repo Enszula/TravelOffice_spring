@@ -24,8 +24,8 @@ public class TravelOfficeService {
         return travelOffice.getCustomerCount();
     }
 
-    public void addTrip(String tripName, Trip trip) {
-        travelOffice.getTrips().put(tripName, trip);
+    public Trip addTrip(String tripName, Trip trip) {
+        return travelOffice.getTrips().put(tripName, trip);
     }
 
     public boolean removeTrip(String tripName) throws NoSuchTripException {

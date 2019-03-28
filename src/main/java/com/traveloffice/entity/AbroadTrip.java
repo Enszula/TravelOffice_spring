@@ -7,8 +7,6 @@ public class AbroadTrip extends Trip {
         super(start, end, destination);
     }
 
-
-
     public void setInsurance(Double insurance) {
         this.insurance = insurance;
     }
