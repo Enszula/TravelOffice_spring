@@ -18,6 +18,7 @@ import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 
+import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -48,8 +49,8 @@ public class TravelOfficeControllerTest {
         Address address = new Address("Opolska 22", "40-091", "Katowice");
         customer = new Customer("Jan Kowalski", address);
 
-        MyDate startDate = new MyDate(2019,03,19);
-        MyDate endDate = new MyDate(2019,03,29);
+        LocalDate startDate = LocalDate.of(2019,03,19);
+        LocalDate endDate = LocalDate.of(2019,03,29);
         domesticTrip = new DomesticTrip(startDate, endDate, "Katowice");
         domesticTrip.setPrice(8000.0);
         abroadTrip = new AbroadTrip(startDate, endDate, "London");

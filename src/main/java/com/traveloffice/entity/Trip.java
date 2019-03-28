@@ -1,12 +1,14 @@
 package com.traveloffice.entity;
 
+import java.time.LocalDate;
+
 public class Trip {
-    private MyDate start;
-    private MyDate end;
+    private LocalDate start;
+    private LocalDate end;
     private String destination;
     private Double price;
 
-    public Trip(MyDate start, MyDate end, String destination) {
+    public Trip(LocalDate start, LocalDate end, String destination) {
         this.start = start;
         this.end = end;
         this.destination = destination;
@@ -20,19 +22,19 @@ public class Trip {
         this.price = price;
     }
 
-    public MyDate getStart() {
+    public LocalDate getStart() {
         return start;
     }
 
-    public void setStart(MyDate start) {
+    public void setStart(LocalDate start) {
         this.start = start;
     }
 
-    public MyDate getEnd() {
+    public LocalDate getEnd() {
         return end;
     }
 
-    public void setEnd(MyDate end) {
+    public void setEnd(LocalDate end) {
         this.end = end;
     }
 
