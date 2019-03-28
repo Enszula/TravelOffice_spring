@@ -5,10 +5,9 @@ public class Customer {
     private Address address;
     private Trip trip;
 
-    public Customer(String name, Address address, Trip trip) {
+    public Customer(String name, Address address) {
         this.name = name;
         this.address = address;
-        this.trip = trip;
     }
 
     public Customer(String name) {
@@ -21,14 +20,6 @@ public class Customer {
 
     public Address getAddress() {
         return address;
-    }
-
-    public Trip getTrip() {
-        return trip;
-    }
-
-    public void setTrip(Trip trip) {
-        this.trip = trip;
     }
 
     public void setAddress(Address address) {
