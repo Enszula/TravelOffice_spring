@@ -5,9 +5,9 @@ import com.traveloffice.entity.Customer;
 import com.traveloffice.entity.DomesticTrip;
 import com.traveloffice.entity.Trip;
 import com.traveloffice.service.TravelOfficeService;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
 import java.util.Set;
 
 @RestController
@@ -27,16 +27,28 @@ public class TravelOfficeController {
         return travelOfficeService.getCustomers();
     }
 
-    @PostMapping(value = "/addDomesticTrip")
-    public DomesticTrip addDomesticTrip(String tripName, DomesticTrip domesticTrip) {
-        return (DomesticTrip)travelOfficeService.getTrips().put(tripName, domesticTrip);
+    @PostMapping(value = "/addTrip")
+    public int addDomesticTrip(@RequestParam String tripName, @RequestBody Trip tirp) {
+        travelOfficeService.addTrip(tripName, tirp);
+        return 99;
 
     }
 
-    @PostMapping(value = "/addAbroadTrip")
-    public AbroadTrip addAbroadTrip(String tripName, AbroadTrip abroadTrip) {
-        return (AbroadTrip)travelOfficeService.getTrips().put(tripName, abroadTrip);
+    @PostMapping(value = "/addDomesticTrip")
+    public Trip addDomesticTrip(@RequestBody String tripName, @RequestBody DomesticTrip domesticTrip) {
+        return travelOfficeService.getTrips().put(tripName, domesticTrip);
 
+    }
+
+    /*    @PostMapping(value = "/addAbroadTrip")
+    public Trip addAbroadTrip(@RequestBody String tripName, @RequestBody AbroadTrip abroadTrip) {
+        return travelOfficeService.getTrips().put(tripName, abroadTrip);
+    }
+*/
+
+    @GetMapping(value = "/getTrips")
+    public Map<String, Trip> getTrips () {
+        return travelOfficeService.getTrips();
     }
 
 
